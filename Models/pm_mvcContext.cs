@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-
+using product_manager;
 namespace product_manager.Models
 {
     public partial class pm_mvcContext : DbContext
@@ -22,8 +22,8 @@ namespace product_manager.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseNpgsql("Host=localhost;Database=pm_mvc;Username=postgres;Password=postgres");
+                AppConfig appConfig = AppConfig.GetAppConfig();
+                optionsBuilder.UseNpgsql(appConfig.DbConnectionString);
             }
         }
 
