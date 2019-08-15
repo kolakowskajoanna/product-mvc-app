@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using product_manager;
 namespace product_manager.Models
 {
-    public partial class pm_mvcContext : DbContext
+    public partial class ProductManagerContext : DbContext
     {
-        public pm_mvcContext()
+        public ProductManagerContext()
         {
         }
 
-        public pm_mvcContext(DbContextOptions<pm_mvcContext> options)
+        public ProductManagerContext(DbContextOptions<ProductManagerContext> options)
             : base(options)
         {
         }
