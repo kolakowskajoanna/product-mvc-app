@@ -23,7 +23,7 @@ namespace product_manager.Controllers
         public async Task<IActionResult> Index()
         {
             var productManagerContext = _context.Product.Include(p => p.ProductCategory);
-            return View(await productManagerContext.ToListAsync());
+            return View(await productManagerContext.OrderByDescending(p => p.Id).ToListAsync());
         }
 
         // GET: Products/Details/5
